@@ -1,0 +1,23 @@
+
+{
+    "name": "flash/flash",
+    "type": "library",
+    "description": "Plugin that displays flashmessages",
+    "keywords": ["flash", "education"],
+    "homepage": "https://github.com/Carleriksson91/",
+    "license": "MIT",
+    "authors": [{
+        "name": "Carl Eriksson",
+        "email": "djarl@live.se",
+        "homepage": "https://github.com/Carleriksson91/",
+        "role": "Developer"
+    }],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "flash\\": "src/"
+        }
+    }
+}
