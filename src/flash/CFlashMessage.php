@@ -5,17 +5,25 @@ class CFlashMessage
 {
      
   use \Anax\DI\TInjectable; 
-
+	
+	 public function __construct($di) 
+    {
+        $this->di = $di;
+    }
    public function insertMessage($message){ 
-     $_SESSION['notificationMessage'] = "<div style='background-color: green;'>" . $message . "</div>"; 
+        $sos = "<div style='background-color: green;'>" . $message . "</div>"; 
+	$this->session->set('message', $sos);
+	
+
 	} 
         
 
     public function printMessage()
     {
-        if(!is_null($_SESSION['notificationMessage'])) {
-            echo $_SESSION['notificationMessage'];
-                    $_SESSION['notificationMessage'] = null;
-        }
+       $check = $this->session->has('message');
+	   if($check){
+		echo $this->session->get('message');
+		
+	   }
     }
 }
